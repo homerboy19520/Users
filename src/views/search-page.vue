@@ -2,11 +2,11 @@
   <div class="search-page">
     <Header></Header>
     <main>
-      <UserListModal></UserListModal>
+      <UserListModal v-show="!isDeleteModalShow"></UserListModal>
     </main>
     <Footer></Footer>
     <DeleteModal
-      v-if="isDeleteModalShow"
+      v-show="isDeleteModalShow"
       class="search-page__modal"
     ></DeleteModal>
   </div>

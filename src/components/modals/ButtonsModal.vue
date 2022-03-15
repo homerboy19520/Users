@@ -1,6 +1,10 @@
 <template>
   <div class="buttons-modal">
-    <Paragraph size="10" weight="medium" color="str-grey"
+    <Paragraph
+      class="buttons-modal__text"
+      size="10"
+      weight="medium"
+      color="str-grey"
       >Сортировка:</Paragraph
     >
     <Button
@@ -8,9 +12,13 @@
       :modifier="item.modifier"
       v-for="(item, index) in switchData"
       :key="index"
-      ><Paragraph size="10" weight="medium" color="str-grey">{{
-        item.content
-      }}</Paragraph></Button
+      ><Paragraph
+        class="buttons-modal__buttons"
+        size="10"
+        weight="medium"
+        color="str-grey"
+        >{{ item.content }}</Paragraph
+      ></Button
     >
   </div>
 </template>
@@ -49,7 +57,23 @@ export default {
 .buttons-modal {
   background-color: transparent;
   display: flex;
-  gap: 8px;
   margin-bottom: 15px;
+
+  & button:nth-last-child(n + 1) {
+    margin-right: 8px;
+  }
+  &__text {
+    margin-right: 8px;
+  }
+
+  @media (max-width: 700px) {
+    margin-bottom: 30px;
+    &__text,
+    &__buttons {
+      font-size: 13px;
+      line-height: 20px;
+      padding: 10px;
+    }
+  }
 }
 </style>

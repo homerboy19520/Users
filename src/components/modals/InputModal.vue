@@ -111,6 +111,7 @@ export default {
 
   @media (max-width: 700px) {
     padding: 10px;
+    min-height: 130px;
   }
 
   &__wrapper {
@@ -122,6 +123,9 @@ export default {
       align-items: center;
       justify-content: flex-start;
       margin-bottom: 0;
+    }
+    @media (max-width: 700px) {
+      margin-bottom: 10px;
     }
   }
 

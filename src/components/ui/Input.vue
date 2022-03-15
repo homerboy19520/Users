@@ -93,6 +93,17 @@ export default {
       &:focus::placeholder {
         opacity: 0;
       }
+
+      @media (max-width: 700px) {
+        padding: 20px 20px 20px 40px;
+        font-size: 16px;
+        line-height: 19px;
+
+        &::placeholder {
+          font-size: 15px;
+          line-height: 18px;
+        }
+      }
     }
   }
 }

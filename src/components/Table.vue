@@ -26,22 +26,40 @@
       <tbody>
         <tr v-for="(item, index) in data" :key="index">
           <td data-label="Имя пользователя">
-            <Paragraph size="12" weight="bold" color="blue">{{
-              item.username
-            }}</Paragraph>
+            <Paragraph
+              class="table__text"
+              size="12"
+              weight="bold"
+              color="blue"
+              >{{ item.username }}</Paragraph
+            >
           </td>
           <td data-label="E-mail">
-            <Paragraph size="12" weight="medium" color="brown">
+            <Paragraph
+              class="table__text"
+              size="12"
+              weight="medium"
+              color="brown"
+            >
               {{ item.email }}
             </Paragraph>
           </td>
           <td data-label="Дата регистрации">
-            <Paragraph size="12" weight="medium" color="brown"
+            <Paragraph
+              class="table__text"
+              size="12"
+              weight="medium"
+              color="brown"
               >{{ formatDate(item.registration_date) }}
             </Paragraph>
           </td>
           <td data-label="Рейтинг">
-            <Paragraph size="12" weight="medium" color="brown">
+            <Paragraph
+              class="table__text"
+              size="12"
+              weight="medium"
+              color="brown"
+            >
               {{ item.rating }}</Paragraph
             >
           </td>
@@ -114,6 +132,18 @@ export default {
   @media (max-width: 700px) {
     background-color: transparent;
     padding: 0;
+
+    &__text {
+      font-size: 13px;
+      line-height: 17px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__text {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 
   & tbody tr,
@@ -191,10 +221,11 @@ export default {
   & tr {
     @media (max-width: 700px) {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       height: auto;
       background-color: var(--color-white);
       border-radius: 10px;
+      box-shadow: 0 18px 15px rgb(148 148 148 / 15%);
     }
   }
 }

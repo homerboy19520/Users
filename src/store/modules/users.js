@@ -20,7 +20,6 @@ export default {
   },
   getters: {
     list(state, getters) {
-      // return state.formatData;
       return getters.paginatedData;
     },
 
@@ -97,11 +96,14 @@ export default {
     },
 
     addActiveStyle(state, index) {
-      //переделать на флаг isActive
       state.switch.forEach((item) => {
         item.modifier = "switch";
       });
       state.switch[index].modifier = "switch active";
+    },
+
+    clearInput(state) {
+      state.inputValue = "";
     },
 
     setValue(state, value) {
@@ -131,15 +133,13 @@ export default {
       state.deleteIndex = index;
     },
 
-    clearInput(state) {
-      state.inputValue = "";
-    },
     resetSort(state) {
       state.switch.forEach((item) => {
         item.modifier = "switch";
       });
     },
     resetFormatData(state) {
+      console.log("преписал");
       state.formatData = JSON.parse(JSON.stringify(state.request));
     },
 

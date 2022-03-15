@@ -57,6 +57,9 @@ export default {
     top: 50%;
     transform: translate(0, -50%);
     z-index: 1;
+    @media (max-width: 700px) {
+      left: 10px;
+    }
   }
 
   &.m-text {
@@ -74,6 +77,12 @@ export default {
 
     &:hover {
       opacity: 0.6;
+    }
+
+    @media (max-width: 700px) {
+      padding: 10px;
+      font-size: 14px;
+      line-height: 19px;
     }
   }
 
@@ -136,9 +145,7 @@ export default {
     border: none;
     outline: none;
     transition: opacity 0.2s ease-out;
-    @media (max-width: 700px) {
-      padding: 16px;
-    }
+    padding: 16px;
 
     & svg {
       min-height: 25px;
