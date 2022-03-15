@@ -87,7 +87,6 @@ export default {
       });
     },
     formatRating(state, data) {
-      console.log("work");
       state[data.name].sort((a, b) => {
         return state.isSortRating
           ? b[data.link] - a[data.link]
@@ -139,7 +138,6 @@ export default {
       });
     },
     resetFormatData(state) {
-      console.log("преписал");
       state.formatData = JSON.parse(JSON.stringify(state.request));
     },
 
@@ -213,7 +211,6 @@ export default {
     openDeleteModal({ commit }, index) {
       commit("setModal", true);
       commit("setDeleteIndex", index);
-      console.log(index);
     },
 
     async fetchUser(ctx) {

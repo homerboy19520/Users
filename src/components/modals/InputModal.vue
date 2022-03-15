@@ -119,10 +119,10 @@ export default {
     margin-bottom: 24px;
 
     &:last-child {
+      margin-bottom: 0;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin-bottom: 0;
     }
     @media (max-width: 700px) {
       margin-bottom: 10px;
