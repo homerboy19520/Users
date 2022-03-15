@@ -82,6 +82,7 @@ export default {
       color: var(--color-black);
       font-size: 12px;
       line-height: 16px;
+      transition: border-color 0.2s ease-out;
 
       &::placeholder {
         color: var(--color-strong-grey);
@@ -92,6 +93,14 @@ export default {
 
       &:focus::placeholder {
         opacity: 0;
+      }
+
+      &:hover {
+        border-color: var(--color-strong-grey);
+      }
+
+      &:focus {
+        border-color: var(--color-black);
       }
 
       @media (max-width: 700px) {

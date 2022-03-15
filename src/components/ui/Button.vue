@@ -90,14 +90,20 @@ export default {
     background-color: transparent;
     border: 1px solid transparent;
     border-bottom: 1px dashed var(--color-strong-grey);
-    transition: border-bottom-color 0.2s ease-out;
+    transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
 
     &.active {
       border-bottom-color: var(--color-black);
 
       & p {
-        transition: color 0.2s ease-out;
+        transition: opacity 0.2s ease-out, color 0.2s ease-out;
         color: var(--color-black);
+      }
+    }
+
+    &:hover {
+      p {
+        opacity: 0.8;
       }
     }
   }
@@ -157,10 +163,18 @@ export default {
     }
 
     &:hover {
-      opacity: 0.6;
+      svg path {
+        transition: fill 0.2s ease-out;
+        fill: var(--color-black);
+      }
     }
     &.disabled {
       cursor: not-allowed;
+      &:hover {
+        svg path {
+          fill: var(--color-blue);
+        }
+      }
     }
   }
 }
